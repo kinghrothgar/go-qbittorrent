@@ -300,23 +300,23 @@ const (
 )
 
 type TorrentAddOptions struct {
-	Stopped            bool // introduced in Web API v2.11.0 (v5.0.0)
-	Paused             bool
-	SkipHashCheck      bool
-	ContentLayout      ContentLayout
-	SavePath           string
-	DownloadPath       string
-	UseDownloadPath    bool
-	AutoTMM            bool
-	Category           string
-	Tags               string
-	LimitUploadSpeed   int64
-	LimitDownloadSpeed int64
-	LimitRatio         float64
-	LimitSeedTime      int64
-	Rename             string
-	FirstLastPiecePrio bool
-	SequentialDownload bool
+	Stopped            bool          `json:"stopped,omitempty"`
+	Paused             bool          `json:"paused,omitempty"`
+	SkipHashCheck      bool          `json:"skip_hash_check,omitempty"`
+	ContentLayout      ContentLayout `json:"content_layout,omitempty"`
+	SavePath           string        `json:"save_path,omitempty"`
+	DownloadPath       string        `json:"download_path,omitempty"`
+	UseDownloadPath    bool          `json:"use_download_path,omitempty"`
+	AutoTMM            bool          `json:"auto_tmm,omitempty"`
+	Category           string        `json:"category,omitempty"`
+	Tags               string        `json:"tags,omitempty"`
+	LimitUploadSpeed   int64         `json:"up_limit,omitempty"`
+	LimitDownloadSpeed int64         `json:"dl_limit,omitempty"`
+	LimitRatio         float64       `json:"ratio_limit,omitempty"`
+	LimitSeedTime      int64         `json:"seeding_time_limit,omitempty"`
+	Rename             string        `json:"rename,omitempty"`
+	FirstLastPiecePrio bool          `json:"f_l_piece_prio,omitempty"`
+	SequentialDownload bool          `json:"seq_dl,omitempty"`
 }
 
 func (o *TorrentAddOptions) Prepare() map[string]string {
